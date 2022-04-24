@@ -1,12 +1,13 @@
 pipeline {
             agent any 
-                environment {
+            /*     environment {
         DOCKER_TAG = getDockerTag()
-	 }
+	 }   */
                  stages {
 				     stage ('Build Docker Image') {
 					    steps { 
-                         sh " docker build . -t kammana/nodeapp:${DOCKER_TAG}"
+						    sh 'echo "Good night "'
+                       /*  sh " docker build . -t kammana/nodeapp:${DOCKER_TAG}" */
                          
               }								 
 				  
@@ -15,8 +16,9 @@ pipeline {
 			
 	}
 				
-				def getDockerTag() {
+		        /*		def getDockerTag() {
 				
 				 def tag  = sh script: 'git rev-parse HEAD', returnStdout: true
-				 return tag
+				 return tag  
  }
+*/
